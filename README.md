@@ -1,8 +1,10 @@
 # Antigravity Installer (Arch / Garuda / Manjaro)
 
-Unofficial installer for **Google Antigravity** on Arch-based Linux distributions.
+[![GitHub Issues](https://img.shields.io/github/issues/apipa12/antigravity-arch)](https://github.com/apipa12/antigravity-arch/issues)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](#)
 
-Неофициальный установщик **Google Antigravity** для дистрибутивов на базе Arch Linux.
+Unofficial installer for **Google Antigravity** on Arch-based Linux distributions.
+*Неофициальный установщик **Google Antigravity** для дистрибутивов на базе Arch Linux.*
 
 ---
 
@@ -10,140 +12,70 @@ Unofficial installer for **Google Antigravity** on Arch-based Linux distribution
 
 - ✅ Fetches the **latest Antigravity build** directly from Google APT
 - ✅ Verifies integrity via **SHA256 checksum**
-- ✅ Installs binaries into **`/opt/antigravity`**
-- ✅ Creates a convenient **`antigravity`** launcher in `*/usr/local/bin*`
+- ✅ Installs binaries into `/opt/antigravity`
+- ✅ Creates a convenient `antigravity` launcher in `/usr/local/bin`
 - ✅ Installs **.desktop launcher** and application icon
 - ✅ Applies **Chrome-style sandbox** fix for better compatibility
-- ✅ **Idempotent:** re-running the installer updates Antigravity to the latest version
+- ✅ **Idempotent:** re-running the installer safely updates Antigravity to the latest version
 
 ---
 
-## 📂 Repository
+## 🚀 Quick Start / Быстрый старт
 
-GitHub: https://github.com/apipa12/antigravity-installer
-
----
-
-## 🇬🇧 INSTALL / UPDATE
-
-### 1. Clone the repository
+### 1. Clone & Run / Клонировать и запустить
 
 ```bash
-git clone https://github.com/apipa12/antigravity-installer.git
-cd antigravity-installer
-```
-
-### 2. Make the installer executable
-
-```bash
+git clone https://github.com/apipa12/antigravity-arch.git
+cd antigravity-arch
 chmod +x antigravity-installer.sh
-```
-
-### 3. Run the installer
-
-```bash
 ./antigravity-installer.sh
 ```
 
-The script will:
-
-- Fetch the latest Antigravity package from Google APT
-- Verify SHA256 checksum
-- Install files into `/opt/antigravity`
-- Create a symlink `/usr/local/bin/antigravity`
-- Install desktop entries and icons
-- Apply sandbox fixes if needed
-
-### 4. Run Antigravity
-
+### 2. Launch / Запуск
 ```bash
 antigravity
 ```
 
-### 5. Uninstall
-
+### 3. Uninstall / Удаление
 ```bash
 ./antigravity-installer.sh --uninstall
 ```
-
-This will remove Antigravity binaries, symlinks, and desktop entries installed by the script.
-
----
-
-## 🇷🇺 УСТАНОВКА / ОБНОВЛЕНИЕ
-
-### 1. Клонируйте репозиторий
-
-```bash
-git clone https://github.com/apipa12/antigravity-installer.git
-cd antigravity-installer
-```
-
-### 2. Сделайте скрипт исполняемым
-
-```bash
-chmod +x antigravity-installer.sh
-```
-
-### 3. Запустите установку
-
-```bash
-./antigravity-installer.sh
-```
-
-Скрипт автоматически:
-
-- Находит последнюю доступную версию Antigravity в репозиториях Google APT
-- Проверяет целостность файла по **SHA256**
-- Устанавливает программу в каталог **`/opt/antigravity`**
-- Создаёт удобный ярлык **`/usr/local/bin/antigravity`**
-- Добавляет ярлык приложения в меню и иконку
-- Настраивает sandbox, как у Google Chrome
-- При повторном запуске обновляет Antigravity до последней версии
-
-### 4. Запуск программы
-
-```bash
-antigravity
-```
-
-### 5. Удаление
-
-```bash
-./antigravity-installer.sh --uninstall
-```
-
-Скрипт удалит:
-
-- Установленные файлы Antigravity из `/opt/antigravity`
-- Символическую ссылку `/usr/local/bin/antigravity`
-- Desktop-файлы и иконки, добавленные этим инсталлером
 
 ---
 
 ## 📋 Requirements / Требования
 
-На системе должны быть установлены следующие утилиты:
-
-- `curl`
-- `bsdtar`
-- `sha256sum`
-- `awk`
-- `sudo`
-
-Проверить наличие можно, например, так:
-
-```bash
-which curl bsdtar sha256sum awk sudo
-```
-
-Если какая-то утилита не найдена, установите её через пакетный менеджер:
+Ensure the following utilities are installed / Убедитесь, что установлены следующие утилиты: `curl`, `bsdtar`, `sha256sum`, `awk`, `sudo`.
 
 ```bash
 sudo pacman -S curl libarchive coreutils gawk sudo
 ```
 
-(пакеты могут немного отличаться в разных Arch-совместимых дистрибутивах).
+---
+
+## ℹ️ Details / Подробности
+
+<details>
+<summary><strong>🇬🇧 English Details</strong></summary>
+
+**How it works:**
+The script automatically finds the latest available version of Antigravity in the Google APT repositories, downloads the `.deb` package, verifies its SHA256 checksum, extracts the contents, and installs them into `/opt/antigravity`. It sets up symlinks and desktop icons for a native feel.
+
+**Uninstall:**
+Running with `--uninstall` removes all binaries, symlinks, and desktop entries installed by the script.
+
+</details>
+
+<details>
+<summary><strong>🇷🇺 Подробности на русском</strong></summary>
+
+**Как это работает:**
+Скрипт автоматически находит последнюю доступную версию Antigravity в репозиториях Google APT, скачивает `.deb` пакет, проверяет его контрольную сумму SHA256, извлекает содержимое и устанавливает в `/opt/antigravity`. Также он настраивает симлинки и иконки рабочего стола для удобного использования.
+
+**Удаление:**
+Запуск с флагом `--uninstall` удалит все файлы, символические ссылки и ярлыки, добавленные инсталлером.
+
+</details>
 
 ---
 
@@ -151,18 +83,12 @@ sudo pacman -S curl libarchive coreutils gawk sudo
 
 - This installer is **unofficial** and is **not affiliated with or endorsed by Google**.
 - Use at your own risk. Always review shell scripts before running them with elevated privileges.
-- The script aims to be safe and minimal, but you are responsible for your own system.
-
----
 
 ## 🛠 Support / Поддержка
 
-If you find a bug or have a feature request:
+Found a bug or want to suggest a feature?
+Нашли баг или хотите предложить улучшение?
 
-- Open an issue in the repository: https://github.com/apipa12/antigravity-installer/issues
+[👉 Open an issue on GitHub](https://github.com/apipa12/antigravity-arch/issues)
 
-Если вы нашли баг или хотите предложить улучшение:
-
-- Создайте issue в репозитории: https://github.com/apipa12/antigravity-installer/issues
-
-Contributions, pull requests, and feedback are welcome! 🚀
+Contributions and pull requests are welcome! 🚀
