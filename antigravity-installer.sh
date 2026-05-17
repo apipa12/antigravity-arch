@@ -46,15 +46,6 @@ curl -fsSL "$PKG_INDEX_URL" -o Packages
 echo "[*] Parsing latest antigravity entry..."
 read -r DEBVER DEBFILENAME DEBSHA256 <<< "$(
   awk '
-    BEGIN{
-      pkg="";
-      ver="";
-      file="";
-      sha="";
-      last_ver="";
-      last_file="";
-      last_sha="";
-    }
     /^Package: antigravity$/ {
       pkg="antigravity";
       ver=""; file=""; sha="";
@@ -63,17 +54,17 @@ read -r DEBVER DEBFILENAME DEBSHA256 <<< "$(
     pkg=="antigravity" && /^Version:/ { ver=$2 }
     pkg=="antigravity" && /^Filename:/ { file=$2 }
     pkg=="antigravity" && /^SHA256:/ { sha=$2 }
+    
     NF==0 && pkg=="antigravity" && ver!="" && file!="" && sha!="" {
-      last_ver=ver;
-      last_file=file;
-      last_sha=sha;
+      print ver, file, sha;
       pkg="";
     }
-    END{
-      if (last_ver && last_file && last_sha)
-        print last_ver, last_file, last_sha;
+    
+    END {
+      if (pkg=="antigravity" && ver!="" && file!="" && sha!="")
+        print ver, file, sha;
     }
-  ' Packages
+  ' Packages | sort -V | tail -n 1
 )"
 
 if [[ -z "${DEBVER:-}" || -z "${DEBFILENAME:-}" || -z "${DEBSHA256:-}" ]]; then
