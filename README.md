@@ -1,10 +1,10 @@
-# Antigravity Installer (Arch / Garuda / Manjaro)
+# Google Antigravity 2.0 Installer (Arch / Garuda / Manjaro / EndeavourOS)
 
-Unofficial installer for **Google Antigravity** on Arch-based Linux distributions.
-Supports both **Antigravity** (the agentic Hub) and **Antigravity IDE** (the VS Code-fork editor).
+Unofficial installer for **Google Antigravity 2.0** on Arch-based Linux distributions (Arch, Garuda, Manjaro, EndeavourOS, etc.).
+Supports installing both **Antigravity 2.0** (the agentic Hub) and **Antigravity IDE 2.0** (the VS Code-fork AI code editor).
 
-Неофициальный установщик **Google Antigravity** для дистрибутивов на базе Arch Linux.
-Поддерживает **Antigravity** (агентный Hub) и **Antigravity IDE** (редактор на основе VS Code).
+Неофициальный установщик **Google Antigravity 2.0** для дистрибутивов на базе Arch Linux (Arch, Garuda, Manjaro, EndeavourOS).
+Поддерживает установку **Antigravity 2.0** (агентный Hub) и **Antigravity IDE 2.0** (AI-редактор кода на основе VS Code).
 
 ***
 
